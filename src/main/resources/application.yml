@@ -1,0 +1,11 @@
+spring:
+  application.name: admin-server
+  security:
+    user:
+      name: admin
+      password: admin
+  boot.admin:
+    client.instance.metadata.user:
+      name: ${spring.security.user.name}
+      password: ${spring.security.user.password}
+    routes.endpoints: env, metrics, trace, jolokia, info, configprops
